@@ -1,0 +1,3 @@
+CREATE DATABASE p4project;
+CREATE USER p4user WITH PASSWORD 'password1';
+GRANT ALL PRIVILEGES ON DATABASE p4project to p4user;
