@@ -1,6 +1,7 @@
 from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.forms import IntegerField
+from pkg_resources import require
 
 # Create your models here.
 class State(models.Model):
@@ -31,3 +32,26 @@ class Waiting_Periods(models.Model):
 
     def __str__(self):
         return self.waiting_period_hours
+
+class Insurance_Coverage(models.Model):
+    requires_coverage = models.BooleanField()
+    private_coverage_no_restriction = models.BooleanField()
+    private_exception_life = models.BooleanField()
+    private_exception_health = models.CharField(max_length=24)
+    private_exception_fetal = models.CharField(max_length=24)
+    private_exception_rape_or_incest = models.BooleanField()
+    exchange_coverage_no_restrictions = models.BooleanField()
+    exchange_exception_life = models.BooleanField()
+    exchange_exception_health = models.CharField(max_length=28)
+    exchange_exception_fetal = models.CharField(max_length=24)
+    exchange_exception_rape_or_incest = models.BooleanField()
+    exchange_forbids_coverage = models.BooleanField()
+    medicaid_coverage_provider_patient_decision = models.BooleanField()
+    medicaid_exception_life = models.BooleanField()
+    medicaid_exception_health = models.CharField(max_length=12)
+    mediacid_exception_fetal = models.CharField(max_length=24)
+    mediacid_exception_rape_or_incest = models.BooleanField()
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='insurance_coverage')
+
+    def __str__(self):
+        return self.requires_coverage
