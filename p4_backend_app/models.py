@@ -1,5 +1,6 @@
 from unittest.util import _MAX_LENGTH
 from django.db import models
+from django.forms import IntegerField
 
 # Create your models here.
 class State(models.Model):
@@ -20,3 +21,13 @@ class Gestational_Limits(models.Model):
 
     def __str__(self):
         return self.banned_after_weeks_since_LMP
+
+class Waiting_Periods(models.Model):
+    waiting_period_hours = models.IntegerField()
+    counseling_visits = models.IntegerField()
+    exception_health = models.CharField(max_length=48)
+    waiting_period_notes = models.CharField(max_length=72)
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='waiting_periods')
+
+    def __str__(self):
+        return self.waiting_period_hours
