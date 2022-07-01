@@ -55,3 +55,16 @@ class Insurance_Coverage(models.Model):
 
     def __str__(self):
         return self.requires_coverage
+
+class laws_for_minors(models.Model):
+    below_age = models.IntegerField()
+    parental_consent_required = models.BooleanField()
+    parental_notification_required = models.BooleanField()
+    parents_required = models.IntegerField()
+    judicial_bypass_available = models.BooleanField()
+    allows_minor_to_consent = models.BooleanField()
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='laws_for_minors')
+
+    def __str__(self):
+        return self.below_age
+
