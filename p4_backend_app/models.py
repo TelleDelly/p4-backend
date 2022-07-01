@@ -27,6 +27,7 @@ class Waiting_Periods(models.Model):
     counseling_visits = models.IntegerField()
     exception_health = models.CharField(max_length=48)
     waiting_period_notes = models.CharField(max_length=72)
+    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name='waiting_periods')
 
     def __str__(self):
         return self.waiting_period_hours
