@@ -82,23 +82,23 @@ class User(models.Model):
         return self.user_phrase
 
 class Clinic(models.Model):
-    name = models.CharField()
-    address = models.CharField()
-    city = models.CharField()
-    state = models.CharField()
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=60)
+    city = models.CharField(max_length=40)
+    state = models.CharField(max_length=20)
     zip = models.IntegerField()
     latitude = models.FloatField()
     longtitude = models.FloatField()
     email = models.EmailField()
-    phone_number = models.CharField()
+    phone_number = models.CharField(max_length=12)
     website = models.URLField()
 
     def __str__(self):
         return self.name
 
 class Review(models.Model):
-    title = models.CharField()
-    body = models.CharField()
+    title = models.CharField(max_length=100)
+    body = models.CharField(max_length=600)
     time_created = models.TimeField()
     user_key = models.ForeignKey(User, on_delete=models.CASCADE, related_name='review')
     clinic_key = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='review')
@@ -107,8 +107,8 @@ class Review(models.Model):
         return self.title
 
 class Story(models.Model):
-    title = models.CharField()
-    body = models.TextField()
+    title = models.CharField(max_length=125)
+    body = models.TextField(max_length=4000)
     time_created = models.TimeField()
     user_key = models.ForeignKey(User, on_delete=models.CASCADE, related_name='story')
 
@@ -116,7 +116,7 @@ class Story(models.Model):
         return self.title
 
 class Social(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=45)
     url = models.URLField()
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='social')
 
@@ -124,29 +124,28 @@ class Social(models.Model):
         return self.name
 
 class Service(models.Model):
-    name = models.CharField()
+    name = models.CharField(max_length=35)
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='service')
 
     def __str__(self):
         return self.name
 
 class Picture(models.Model):
-    alt = models.CharField()
+    alt = models.CharField(max_length=45)
     url = models.URLField()
-    image = models.ImageField()
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='picture')
 
     def __str__(self):
         return self.alt
 
 class Hours(models.Model):
-    monday = models.CharField()
-    tuesday = models.CharField()
-    wednesday = models.CharField()
-    thursday = models.CharField()
-    friday = models.CharField()
-    saturday = models.CharField()
-    sunday = models.CharField()
+    monday = models.CharField(max_length=50)
+    tuesday = models.CharField(max_length=50)
+    wednesday = models.CharField(max_length=50)
+    thursday = models.CharField(max_length=50)
+    friday = models.CharField(max_length=50)
+    saturday = models.CharField(max_length=50)
+    sunday = models.CharField(max_length=50)
     clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='hours')
 
     def __str__(self):
