@@ -1,3 +1,6 @@
+from calendar import MONDAY
+from datetime import datetime
+from time import timezone
 from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.forms import IntegerField
@@ -68,3 +71,83 @@ class laws_for_minors(models.Model):
     def __str__(self):
         return self.below_age
 
+# Edit Migrations to include the time created default = datetime.time.now (7/2)
+
+class User(models.Model):
+    user_phrase = models.CharField(max_length=25)
+    user_pass = models.CharField(max_length=25)
+    time_created = models.TimeField()
+
+    def __str__(self):
+        return self.user_phrase
+
+class Clinic(models.Model):
+    name = models.CharField()
+    address = models.CharField()
+    city = models.CharField()
+    state = models.CharField()
+    zip = models.IntegerField()
+    latitude = models.FloatField()
+    longtitude = models.FloatField()
+    email = models.EmailField()
+    phone_number = models.CharField()
+    website = models.URLField()
+
+    def __str__(self):
+        return self.name
+
+class Review(models.Model):
+    title = models.CharField()
+    body = models.CharField()
+    time_created = models.TimeField()
+    user_key = models.ForeignKey(User, on_delete=models.CASCADE, related_name='review')
+    clinic_key = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='review')
+
+    def __str__(self):
+        return self.title
+
+class Story(models.Model):
+    title = models.CharField()
+    body = models.TextField()
+    time_created = models.TimeField()
+    user_key = models.ForeignKey(User, on_delete=models.CASCADE, related_name='story')
+
+    def __str__(self):
+        return self.title
+
+class Social(models.Model):
+    name = models.CharField()
+    url = models.URLField()
+    clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='social')
+
+    def __str__(self):
+        return self.name
+
+class Service(models.Model):
+    name = models.CharField()
+    clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='service')
+
+    def __str__(self):
+        return self.name
+
+class Picture(models.Model):
+    alt = models.CharField()
+    url = models.URLField()
+    image = models.ImageField()
+    clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='picture')
+
+    def __str__(self):
+        return self.alt
+
+class Hours(models.Model):
+    monday = models.CharField()
+    tuesday = models.CharField()
+    wednesday = models.CharField()
+    thursday = models.CharField()
+    friday = models.CharField()
+    saturday = models.CharField()
+    sunday = models.CharField()
+    clinic_id = models.ForeignKey(Clinic, on_delete=models.CASCADE, related_name='hours')
+
+    def __str__(self):
+        return self.monday
