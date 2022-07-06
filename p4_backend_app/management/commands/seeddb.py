@@ -5,7 +5,7 @@ from p4_backend_app.models import Insurance_Coverage, State, Gestational_Limits,
 import os
 import json
 import requests
-import asyncio
+
 
 #Using documentation from the Django docs for command management and this website: https://towardsdatascience.com/why-you-should-use-async-in-python-6ab53740077e
 
@@ -28,7 +28,7 @@ class Command(BaseCommand):
         url = 'https://api.abortionpolicyapi.com/v1/insurance_coverage/states'
         req = requests.get(url, headers=headers)
         reqJSON = req.json()
-        self.stdout.writelines(reqJSON['Oregon']['medicaid_exception_life'])
-        
+        self.stdout.write(reqJSON['Iowa']['medicaid_exception_fetal'])
+
 
         
