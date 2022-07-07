@@ -6,13 +6,13 @@ const StatePolicySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    gestational_limit:{
+    gestational_limits:{
         type: {}
     },
-    waiting_period: {
+    waiting_periods: {
         type: {}
     },
-    laws_for_minors: {
+    minors: {
         type: {}
     },
     insurance_coverage: {
