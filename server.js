@@ -7,7 +7,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
-app.use('/state_policy', statePolicyController)
+app.use('/statepolicy', statePolicyController)
 
 
 const port = process.env.PORT || 4000
