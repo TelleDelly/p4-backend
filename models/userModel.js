@@ -35,14 +35,14 @@ userSchema.pre('save', function(next){
             next()
         }
     })
-    bcrypt.hash(this.username, 10, (error, hash) => {
-        if(error){
-            return next(error)
-        } else {
-            this.username = hash
-            next()
-        }
-    })
+    // bcrypt.hash(this.username, 10, (error, hash) => {
+    //     if(error){
+    //         return next(error)
+    //     } else {
+    //         this.username = hash
+    //         next()
+    //     }
+    // })
 })
 
 

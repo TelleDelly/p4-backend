@@ -7,9 +7,9 @@ const app = express()
 require('./middleware/auth')
 
 app.use(express.json())
-// app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: true}))
 app.use(cors())
-app.use(bodyParser.urlencoded({extended: false}))
+// app.use(bodyParser.urlencoded({extended: false}))
 
 app.use('/statepolicy', statePolicyController)
 app.use('/users', userController)

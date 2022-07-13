@@ -16,6 +16,7 @@ passport.use('signup', new localStrategy(
     },
     async (username, password, done) => {
         try{
+            console.log('signup')
             const user = await UserModel.create({username: username,password: password})
             return done(null, user)
         } catch(error){
@@ -23,6 +24,35 @@ passport.use('signup', new localStrategy(
         }
     }
 ))
+
+passport.use(
+    'login',
+    new localStrategy(
+    {
+        usernameField: 'username',
+        passwordField: 'password',
+        secretOrKey: process.env.ACCESS_TOKEN_SECRET,
+    },
+    async (username, password, done) => {
+        try{
+            // console.log(`pass: ${password} user:`, username)
+            const user = await UserModel.findOne({username: username})
+
+            if(!user) {
+                return done(null, false, {message: 'User not found'})
+            }
+
+            const validate = await user.isValidPass(password)
+
+            if(!validate){
+                return done(null, false, {message: 'Wrong Pasasword'})
+            }
+            return done(null, user, { message: 'Logged in successfully'})
+        } catch (error) {
+            return done(error)
+        }
+    }
+    ))
 
 passport.use(
     new JwtStrategy(
