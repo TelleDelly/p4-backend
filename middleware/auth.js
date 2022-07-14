@@ -7,6 +7,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt
 const localStrategy = require('passport-local').Strategy
 const UserModel = require('../models/userModel')
 const passport = require('passport')
+const bcrypt = require('bcrypt')
 require('dotenv').config()
 
 passport.use('signup', new localStrategy(
@@ -35,8 +36,8 @@ passport.use(
     },
     async (username, password, done) => {
         try{
-            // console.log(`pass: ${password} user:`, username)
             const user = await UserModel.findOne({username: username})
+
 
             if(!user) {
                 return done(null, false, {message: 'User not found'})

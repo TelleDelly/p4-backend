@@ -49,11 +49,12 @@ userSchema.pre('save', function(next){
 //These methods are untested at the moment and currently I have them set as async functions referencing the schema
 //with this. I am a bit skeptical of using this in an arrow function becuase it might be the same issue with
 //the .pre function where this was grabbing an the instance of creation rather the schema/object itself. Please take note 
-userSchema.methods.isValidPass = async (password) => {
-    const user=this;
-    const compare = await bcrypt.compare(password, user.password)
+userSchema.methods.isValidPass = async function(password){
+    const user = this;
+    const match = await bcrypt.compare(password, user.password)
 
-    return compare
+    return match
+    
 }
 
 userSchema.methods.isValidUser = async (username) => {

@@ -17,21 +17,16 @@ userRouter.post('/signup',
 
 userRouter.post('/login',
     async (req, res, next) => {
-        // console.log(req)
         passport.authenticate('login', async (err, user, info) => {
-            console.log(user)
             try{
-                // console.log(`user ${user} err${err} info`, info)
                 if(err ||!user){
-                    // console.log(err)
                     const error = new Error('an error ocurred')
                     return next(error)
                 }
                 req.login(
                     user,
                     {session: false},
-                    async(error =>{
-                        console.log('creatiing token')
+                    async (error) =>{
                         if(error) return next(error)
 
                         const body = { _id: user._id, username: user.username}
@@ -39,7 +34,7 @@ userRouter.post('/login',
 
                         return res.json({token})
                     })
-                )
+                
             } catch(error){
                 // console.log(error)
                 return next(error)
