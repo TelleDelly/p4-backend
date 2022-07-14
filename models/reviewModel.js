@@ -13,7 +13,9 @@ const reviewSchema = new mongoose.Schema(
             maxlength: 700
         },
         rating: {
-            type: Schema.Types.ObjectId, ref: 'Rating'
+            type: Number,
+            min: 1,
+            max: 5
         },
         user: {
             type: Schema.Types.ObjectId, ref: 'User'
