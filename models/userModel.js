@@ -57,9 +57,11 @@ userSchema.methods.isValidPass = async function(password){
     
 }
 
-userSchema.methods.isValidUser = async (username) => {
+userSchema.methods.isValidUser = async function(username){
     const user = this;
     const compare = await bcrypt.compare(username, user.username)
+    
+    return compare
 }
 const User = mongoose.model('User', userSchema);
 
