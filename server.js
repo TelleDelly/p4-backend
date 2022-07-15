@@ -8,7 +8,7 @@ require('./middleware/auth')
 //Controller imports
 const statePolicyController = require('./controllers/statePolicyController')
 const userController = require('./controllers/userLogSign')
-const userGet = require('./controllers/userGet')
+const secureController = require('./controllers/secureRoutes')
 
 const app = express()
 
@@ -20,7 +20,7 @@ app.use(cors())
 
 app.use('/statepolicy', statePolicyController)
 app.use('/users', userController)
-app.use('/userget', passport.authenticate('jwt', {session: false}) ,userGet)
+app.use('/secure', passport.authenticate('jwt', {session: false}) ,secureController)
 
 
 
