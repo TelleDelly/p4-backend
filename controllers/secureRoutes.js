@@ -60,6 +60,19 @@ secureRouter.put('/editstory', (req, res) => {
     .catch(console.error)
 })
 
+//Delete Route
+secureRouter.delete('/deletestory', (req, res) => {
+    Story.findOneAndDelete({_id: req.body._id, user: req.user._id})
+    .then(result => {
+        if(result){
+            res.send('deleted')
+        } else {
+            res.send('not deleted')
+        }
+    })
+    .catch(console.error)
+})
+
 
 
 
