@@ -9,6 +9,7 @@ require('./middleware/auth')
 const statePolicyController = require('./controllers/statePolicyController')
 const userController = require('./controllers/userLogSign')
 const secureController = require('./controllers/secureRoutes')
+const storyController = require('./controllers/StoryController')
 
 const app = express()
 
@@ -20,8 +21,8 @@ app.use(cors())
 
 app.use('/statepolicy', statePolicyController)
 app.use('/users', userController)
+app.use('/stories', storyController)
 app.use('/secure', passport.authenticate('jwt', {session: false}) ,secureController)
-
 
 
 const port = process.env.PORT || 4000
