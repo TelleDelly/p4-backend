@@ -17,6 +17,8 @@ const secureRouter = express.Router()
 // })
 
 // REVIEW ROUTES //
+
+//Create Route
 secureRouter.post('/postreview', (req, res) => {
     const review = {
         title: req.body.title,
@@ -31,6 +33,30 @@ secureRouter.post('/postreview', (req, res) => {
     .catch(console.error)
 })
 
+//Update Route
+secureRouter.put('/editreview', (req, res) => {
+    Review.findOneAndUpdate({_id: req.body._id, user: req.user._id}, req.body, {new: true})
+    .then((result) => {
+        if(result){
+            res.send('Unable to update')
+        } else {
+            res.send('Updated')
+        }
+    })
+    .catch(console.error)
+})
+
+//Delete Route
+secureRouter.delete('/deletestory', (req, res) => {
+    Review.findOneAndDelete({_id: req.body._id, user: req.user._id})
+    .then(result => {
+        if(result){
+            res.send('deleted')
+        } else {
+            res.send('unable to delete')
+        }
+    })
+})
 
 // STORY ROUTES //
 
