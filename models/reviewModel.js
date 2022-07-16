@@ -12,11 +12,6 @@ const reviewSchema = new mongoose.Schema(
             type: String,
             maxlength: 700
         },
-        rating: {
-            type: Number,
-            min: 1,
-            max: 5
-        },
         user: {
             type: Schema.Types.ObjectId, ref: 'User'
         },

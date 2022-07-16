@@ -8,6 +8,7 @@ const clinicSchema = new mongoose.Schema(
             reqired: true
         },
         address: {
+            PO: String,
             city: String,
             state: String,
             zipcode: Number,
@@ -31,18 +32,25 @@ const clinicSchema = new mongoose.Schema(
             Linkedin: String
         },
         hours: {
-            type: String
+            Monday: String,
+            Tuesday: String,
+            Wednesday: String,
+            Thursday: String,
+            Friday: String,
+            Saturday: String,
+            Sunday: String
         },
         services: {
-            type: String
+            Abortion: {
+                Medication: String,
+                Surgical: String,
+            },
+            Birth_Control: String,
         },
         picture: String,
         reviews: [{
             type: Schema.Types.ObjectId, ref: 'Review' 
         }],
-        ratings: [{
-            type: Schema.Types.ObjectId, ref: 'Rating' 
-        }]
     }
 );
 
