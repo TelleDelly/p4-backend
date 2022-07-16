@@ -1,0 +1,190 @@
+[
+    {
+        "name": "Planned Parenthood - Flossnoor Health Center",
+        "address": {
+            "PO": "19831 Govenors Hwy",
+            "city": "Flossmoor",
+            "state": "Illinois",
+            "zipcode": 60422
+        },
+        "latlong": {
+            "latitude":41.529220,
+            "longitude":-87.696900
+        },
+        "email": "plannedparenthood.org",
+        "phone": 7089600907,
+        "website": "https://www.plannedparenthood.org/health-center/illinois/flossmoor/60422/flossmoor-health-center-4360-90430",
+        "hours": {
+            "Monday": "12:00PM to 7:00PM",
+            "Tuesday": "10:00AM to 5:00PM",
+            "Wednesday": "9:00AM to 5:00PM",
+            "Thursday": "8:00AM to 4:00PM",
+            "Friday": "8:00AM to 4:00PM",
+            "Saturday": "Closed",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion":{
+                "Medical": "Yes",
+                "Surgical": "Yes"
+            },
+            "Birth_Control": "Yes"
+        }
+    },
+    {
+        "name": "American Womens Medical Center",
+        "address": {
+            "PO": "2744 North Western Avenue",
+            "city": "Chicago",
+            "state": "Illinois",
+            "zipcode": 60647
+        },
+        "latlong": {
+            "latitude": 41.931730,
+            "longitude": -87.688420
+        },
+        "phone": 8472949614,
+        "website": "https://www.americanwomensmedicalcenter.com/",
+        "hours": {
+            "Monday": "8:00AM to 6:00PM",
+            "Tuesday": "8:00AM to 6:00PM",
+            "Wednesday": "8:00AM to 6:00PM",
+            "Thursday": "8:00AM to 6:00PM",
+            "Friday": "8:00AM to 6:00PM",
+            "Saturday": "8:00AM to 2:00PM",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion":{
+                "Medical": "Yes",
+                "Surgical": "Yes"
+            },
+            "Birth_Control": "Yes"
+        }
+    },
+    {
+        "name": "Women's Aid Center",
+        "address": {
+            "PO": "4801 West Peterson Avenue Ste 609",
+            "city": "Chicago",
+            "state": "Illinois",
+            "zipcode": 60646
+        },
+        "latlong": {
+            "latitude": 41.98961,
+            "longitude": -87.74844
+        },
+        "phone": 7739232110,
+        "website": "https://www.womensaidcenter.com/",
+        "hours": {
+            "Monday": "9:00AM to 5:00PM",
+            "Tuesday": "8:00AM to 5:00PM",
+            "Wednesday": "9:00AM to 5:00PM",
+            "Thursday": "9:00AM to 5:00PM",
+            "Friday": "9:00AM to 5:00PM",
+            "Saturday": "9:00AM to 2:00PM",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion":{
+                "Medical": "Yes",
+                "Surgical": "No"
+            },
+            "Birth_Control": "No"
+        }
+    },
+    {
+        "name": "All Women's Medical Center",
+        "address": {
+            "PO": "3140 Irving Park Rd",
+            "city": "Chicago",
+            "state": "Illinois",
+            "zipcode": 60618
+        },
+        "latlong": {
+            "latitude":41.95431,
+            "longitude": -87.70721
+        },
+        "phone":7734780700 ,
+        "website": "https://allwomensmedicalcenter.com/",
+        "hours": {
+            "Monday": "9:00AM to 5:00PM",
+            "Tuesday": "9:00AM to 5:00PM",
+            "Wednesday": "1:30PM to 5:00PM",
+            "Thursday": "9:00AM to 5:00PM",
+            "Friday": "1:30PM to 5:00PM",
+            "Saturday": "8:30AM to 2:00PM",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion":{
+                "Medical": "Yes",
+                "Surgical": "No"
+            },
+            "Birth_Control": "Yes"
+        }
+    },
+    {
+        "name": "The Center for Women",
+        "address": {
+            "PO": "10215 Roosevelt Rd #101",
+            "city": "Westchester",
+            "state": "Illinois",
+            "zipcode": 60154
+        },
+        "latlong": {
+            "latitude":41.86748,
+            "longitude": -87.87910
+        },
+        "phone": 7084504545,
+        "website": "chicagocenterforwomen.com",
+        "hours": {
+            "Monday": "1:00PM to 4:00PM",
+            "Tuesday": "1:00PM to 4:00PM",
+            "Wednesday": "10:00AM to 1:00PM",
+            "Thursday": "10:15AM to 1:00PM",
+            "Friday": "10:15AM to 2:00PM",
+            "Saturday": "1:00PM to 4:00PM",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion":{
+                "Medical": "Yes",
+                "Surgical": "No"
+            },
+            "Birth_Control": "No"
+        }
+    },
+    {
+        "name": "Rose Women's Medical Center",
+        "address": {
+            "PO": "9540 Addision Avenue",
+            "city": "Franklin Park",
+            "state": "Illinois",
+            "zipcode": 60131
+        },
+        "latlong": {
+            "latitude":41.94442,
+            "longitude": -87.86514
+        },
+        "email": "Rosewomensmedicalcenter@gmail.com",
+        "phone":8479162447 ,
+        "website": "https://www.rosewomenshealthcenter.com/",
+        "hours": {
+            "Monday": "9:00AM to 6:00PM",
+            "Tuesday": "9:00AM to 6:00PM",
+            "Wednesday": "9:00AM to 6:00PM",
+            "Thursday": "9:00AM to 6:00PM",
+            "Friday": "9:00AM to 6:00PM",
+            "Saturday": "9:00AM to 6:00PM",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion":{
+                "Medical": "Yes",
+                "Surgical": "No"
+            },
+            "Birth_Control": "Yes"
+        }
+    }
+]
