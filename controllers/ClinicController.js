@@ -3,13 +3,16 @@ const express = require('express')
 const {Router} = require('express')
 const ClinicRouter = express.Router()
 
-const Clinics = require('../models/reviewModel')
+const Clinics = require('../models/clinicModel')
 
-ClinicRouter.get('/:stateName', (res, res) => {
-    let stateName = req.params.stateName
-    Clinics.find({state: staetName})
+ClinicRouter.get('/state/:stateName', (req, res) => {
+    Clinics.find({'address.state': req.params.stateName})
     .then((results) => res.json(results))
     .catch(console.error)
 })
 
-module.exports = ReviewRouter
+ClinicRouter.get('/test', (req, res) => {
+    console.log('test')
+})
+
+module.exports = ClinicRouter
