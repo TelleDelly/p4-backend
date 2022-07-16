@@ -11,8 +11,8 @@ statePolicyRouter.get('/getallstates', (req, res) => {
 })
 
 statePolicyRouter.get('/:stateName', (req, res) => {
-    StatePolicy.find({state: req.params.stateName})
-    .then((policies) => res.send(policies))
+    StatePolicy.findOne({state: req.params.stateName})
+    .then((policies) => res.json(policies))
     .catch(console.error)
 })
 
