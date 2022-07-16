@@ -5,23 +5,20 @@ const clinicSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            reqired: true
         },
         address: {
+            PO: String,
             city: String,
             state: String,
             zipcode: Number,
-            required: true
         },
         latlong: {
             latitude: Number,
             longitude: Number,
-            required: true
         },
         email: String,
         phone: {
             type:Number,
-            required: true
         },
         website: String,
         socials: {
@@ -31,18 +28,25 @@ const clinicSchema = new mongoose.Schema(
             Linkedin: String
         },
         hours: {
-            type: String
+            Monday: String,
+            Tuesday: String,
+            Wednesday: String,
+            Thursday: String,
+            Friday: String,
+            Saturday: String,
+            Sunday: String
         },
         services: {
-            type: String
+            Abortion: {
+                Medication: String,
+                Surgical: String,
+            },
+            Birth_Control: String,
         },
         picture: String,
         reviews: [{
             type: Schema.Types.ObjectId, ref: 'Review' 
         }],
-        ratings: [{
-            type: Schema.Types.ObjectId, ref: 'Rating' 
-        }]
     }
 );
 

@@ -1,4 +1,5 @@
 const express = require('express')
+
 const {Router} = require('express')
 const ClinicRouter = express.Router()
 
