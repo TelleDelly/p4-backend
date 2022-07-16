@@ -11,6 +11,7 @@ const userController = require('./controllers/userLogSign')
 const secureController = require('./controllers/secureRoutes')
 const storyController = require('./controllers/StoryController')
 const reviewController = require('./controllers/ReviewController')
+const clinicController = require('./controllers/ClinicController')
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.use('/users', userController)
 app.use('/stories', storyController)
 app.use('/secure', passport.authenticate('jwt', {session: false}) ,secureController)
 app.use('/reviews', reviewController)
+app.use('/clinics', clinicController)
 
 
 const port = process.env.PORT || 4000
