@@ -5,24 +5,20 @@ const clinicSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            reqired: true
         },
         address: {
             PO: String,
             city: String,
             state: String,
             zipcode: Number,
-            required: true
         },
         latlong: {
             latitude: Number,
             longitude: Number,
-            required: true
         },
         email: String,
         phone: {
             type:Number,
-            required: true
         },
         website: String,
         socials: {
