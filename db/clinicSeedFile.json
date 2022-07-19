@@ -186,5 +186,112 @@
             },
             "Birth_Control": "Yes"
         }
+    },{
+        "name": "Planned Parenthood - Champaign Health Center",
+        "address": {
+            "PO":"302 E Stoughton St",
+            "city": "Champaign",
+            "state": "Illinois",
+            "zipcode": 61820
+        },
+        "latlong": {
+            "latitude": 40.1137295930542,
+            "longitude": -88.23521694639479
+        },
+        "phone": 2173598022,
+        "website": "https://www.plannedparenthood.org/health-center/illinois/champaign/61820/champaign-health-center-3283-90430?utm_campaign=champaign-health-center&utm_medium=organic&utm_source=local-listing",
+        "hours": {
+            "Monday": "8:00AM to 4:00PM",
+            "Tuesday": "10:00AM to 6:00PM",
+            "Wednesday": "8:00AM to 4:00PM",
+            "Thursday": "8:00AM to 4:00PM",
+            "Friday": "8:00AM to 1:00PM",
+            "Saturday": "Closed",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion": true,
+            "Birth_Control": true,
+            "Morning-After Pill(Emergency Contraception)": true,
+            "STD Testing Treatment & Vaccines": true,
+            "Pregnancy Testing & Services": true,
+            "HIV Services": true,
+            "Men's Health Care": true,
+            "Women's Health Care": true,
+            "Transgender Hormone Therapy": true
+        }
+    },
+    {
+        "name": "Planned Parenthood - Peoria Health Center",
+        "address": {
+            "PO": "2709 Knoxville Ave",
+            "city": "Peoria",
+            "state": "Illinois",
+            "zipcode": 61604
+        },
+        "latlong": {
+            "latitude": 40.72099,
+            "longitude": -89.59406
+        },
+        "phone":3096810350,
+        "website": "https://www.plannedparenthood.org/health-center/illinois/peoria/61604/peoria-health-center-3281-90430?utm_campaign=peoria-health-center&utm_medium=organic&utm_source=local-listing",
+        "hours": {
+            "Monday": "8:00AM to 4:00PM",
+            "Tuesday": "8:00AM to 4:00PM",
+            "Wednesday": "8:00AM to 4:00PM",
+            "Thursday": "10:00AM to 6:00PM",
+            "Friday": "8:00AM to 1:00PM",
+            "Saturday": "Closed",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion": true,
+            "Birth_Control": true,
+            "Morning-After Pill(Emergency Contraception)": true,
+            "STD Testing Treatment & Vaccines": true,
+            "Pregnancy Testing & Services": true,
+            "HIV Services": true,
+            "Men's Health Care": true,
+            "Women's Health Care": true,
+            "Transgender Hormone Therapy": true
+        }
+
+    },
+    {
+        "name": "Planned Parenthood regional facility Fairview Heights",
+        "address": {
+            "PO": "317 Salem PL",
+            "city": "Farview Heights",
+            "state": "Illinois",
+            "zipcode": 62208
+        },
+        "latlong": {
+            "latitude": 38.60048,
+            "longitude": -89.98180
+        },
+        "phone":6182776668,
+        "website": "https://www.plannedparenthood.org/health-center/illinois/fairview-heights/62208/fairview-heights-health-center-2712-90770",
+        "hours": {
+            "Monday": "8:00AM to 4:00PM",
+            "Tuesday": "8:00AM to 4:00PM",
+            "Wednesday": "8:00AM to 4:00PM",
+            "Thursday": "11:00AM to 7:00PM",
+            "Friday": "8:00AM to 4:00PM",
+            "Saturday": "8:00AM to 4:00PM",
+            "Sunday": "Closed"
+        },
+        "services": {
+            "Abortion": true,
+            "Birth_Control": true,
+            "Morning-After Pill(Emergency Contraception)": true,
+            "STD Testing Treatment & Vaccines": true,
+            "Pregnancy Testing & Services": true,
+            "HIV Services": true,
+            "Men's Health Care": true,
+            "Women's Health Care": true,
+            "Transgender Hormone Therapy": true
+        }
+
     }
+    
 ]
