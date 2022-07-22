@@ -23,13 +23,17 @@
             "Saturday": "Closed",
             "Sunday": "Closed"
         },
-        "services": {
-            "Abortion":{
-                "Medical": "Yes",
-                "Surgical": "Yes"
-            },
-            "Birth_Control": "Yes"
-        }
+        "services": [
+            "Abortion",
+            "Birth Control",
+            "HIV Service",
+            "Men's Health Care",
+            "Morning-After Pill(Emergency Contraception)",
+            "Pregnancy Testing & Services",
+            "STD Testing, Treatment & Vaccines",
+            "Transgender Horomone Therapy",
+            "Women's Health Care"
+        ] 
     },
     {
         "name": "American Womens Medical Center",
@@ -54,13 +58,11 @@
             "Saturday": "8:00AM to 2:00PM",
             "Sunday": "Closed"
         },
-        "services": {
-            "Abortion":{
-                "Medical": "Yes",
-                "Surgical": "Yes"
-            },
-            "Birth_Control": "Yes"
-        }
+        "services": [
+            "Abortion",
+            "Women's Health",
+            "STD"
+        ] 
     },
     {
         "name": "Women's Aid Center",
@@ -85,13 +87,20 @@
             "Saturday": "9:00AM to 2:00PM",
             "Sunday": "Closed"
         },
-        "services": {
-            "Abortion":{
-                "Medical": "Yes",
-                "Surgical": "No"
-            },
-            "Birth_Control": "No"
-        }
+        "services": [
+            "Non-Surgical Abortion-Abortion Pill",
+            "General Gynecology & Women's Health",
+            "Pap Smear, HPV Testing & Colposcopy",
+            "Diagnostic Ultrasound",
+            "Urinary tract Infection(UTI) Diagnosis and Treatment",
+            "Sexually Transmitted Disease (STD) Testing and Treatment",
+            "Birth Control Consultations and Counseling",
+            "Morning-After Pill",
+            "Mammogram Referrals",
+            "Free Urine Pregnancy Tests",
+            "Proof of Pregnancy",
+            "Blood Tests"
+        ] 
     },
     {
         "name": "All Women's Medical Center",
@@ -116,13 +125,11 @@
             "Saturday": "8:30AM to 2:00PM",
             "Sunday": "Closed"
         },
-        "services": {
-            "Abortion":{
-                "Medical": "Yes",
-                "Surgical": "No"
-            },
-            "Birth_Control": "Yes"
-        }
+        "services": [
+            "Abortion Services",
+            "Gynecology",
+            "Contraceptive Counseling"
+        ] 
     },
     {
         "name": "The Center for Women",
@@ -137,7 +144,7 @@
             "longitude": -87.87910
         },
         "phone": 7084504545,
-        "website": "chicagocenterforwomen.com",
+        "website": "https://chicagocenterforwomen.com",
         "hours": {
             "Monday": "1:00PM to 4:00PM",
             "Tuesday": "1:00PM to 4:00PM",
@@ -147,13 +154,9 @@
             "Saturday": "1:00PM to 4:00PM",
             "Sunday": "Closed"
         },
-        "services": {
-            "Abortion":{
-                "Medical": "Yes",
-                "Surgical": "No"
-            },
-            "Birth_Control": "No"
-        }
+        "services": [
+            "Abortion"
+        ] 
     },
     {
         "name": "Rose Women's Medical Center",
@@ -179,12 +182,14 @@
             "Saturday": "9:00AM to 6:00PM",
             "Sunday": "Closed"
         },
-        "services": {
-            "Abortion":{
-                "Medical": "Yes",
-                "Surgical": "No"
-            },
-            "Birth_Control": "Yes"
-        }
+        "services": [
+            "Pregnancy Termination",
+            "Birth Control",
+            "Pap Smear",
+            "Gynecology",
+            "STDs",
+            "Ultrasound"
+        ] 
     }
 ]
+
