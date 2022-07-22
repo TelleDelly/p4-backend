@@ -36,13 +36,7 @@ const clinicSchema = new mongoose.Schema(
             Saturday: String,
             Sunday: String
         },
-        services: {
-            Abortion: {
-                Medication: String,
-                Surgical: String,
-            },
-            Birth_Control: String,
-        },
+        services: [],
         picture: String,
         reviews: [{
             type: Schema.Types.ObjectId, ref: 'Review' 
