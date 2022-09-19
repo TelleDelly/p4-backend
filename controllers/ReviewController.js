@@ -4,21 +4,31 @@ const ReviewRouter = express.Router()
 
 const Reviews = require('../models/reviewModel')
 
-ReviewRouter.get('/getall', (req, res) => {
-    Reviews.find({clinic: req.body.clinicId})
-    .then(results => res.json(results))
-    .catch(console.error)
+ReviewRouter.get('/getall', async (req, res) => {
+    try{
+        const reviews = await Reviews.find({clinic: req.body.clinicId})
+        res.json(reviews)
+    } catch(error){
+        console.error
+    }
 })
 
-ReviewRouter.get('/getOne/:id',(req, res) => {
-    Reviews.findById(req.params.id)
-    .then(results => res.json(results))
+ReviewRouter.get('/getOne/:id', async (req, res) => {
+    try{
+        const review = await Reviews.findById(req.params.id)
+        res.json(review)
+    } catch(error){
+        console.error
+    }
 })
 
-ReviewRouter.get('/getlimit/:limit', (req, res) => {
-    Reviews.find({clinic: req.body.clinicId}).limit(req.params.limit)
-    .then(results => res.json(results))
-    .catch(console.error)
+ReviewRouter.get('/getlimit/:limit', async (req, res) => {
+   try{
+    const reviews = await Reviews.find({clinic: req.body.clinicId}).limit(req.params.limit)
+    res.json(reviews)
+   } catch(error){
+        console.error
+   }
 })
 
 module.exports = ReviewRouter
