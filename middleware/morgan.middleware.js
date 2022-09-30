@@ -11,7 +11,7 @@ const skip = () => {
 }
 
 const morganMiddleware = morgan(
-    ':remote-addr :method :url :status :res[content-lenght] - :response-time ms',
+    'Method-:method Endpoint-:url Status-:status :res[content-length] - :response-time ms',
     { stream, skip}
 )
 
