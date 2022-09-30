@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clear-all-logs": "rm logs/all.log",
+    "clear-error-logs": "rm logs/error.log"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,11 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.7.0",
     "mongoose": "^6.4.3",
+    "morgan": "^1.10.0",
     "node-fetch": "^2.6.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "winston": "^3.8.2"
   }
 }
