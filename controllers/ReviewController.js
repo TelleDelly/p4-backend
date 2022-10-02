@@ -3,22 +3,23 @@ const { Router } = require("express");
 const ReviewRouter = express.Router();
 
 const Reviews = require("../models/reviewModel");
+const CustomError = require("../utils/CustomError");
 
-ReviewRouter.get("/getall", async (req, res) => {
+ReviewRouter.get("/getall", async (req, res, next) => {
   try {
     const reviews = await Reviews.find({ clinic: req.body.clinicId });
-    res.json(reviews);
+    res.status(200).json(reviews);
   } catch (error) {
-    console.error;
+    next(new CustomError('Unable to get reviews', 400))
   }
 });
 
-ReviewRouter.get("/getOne/:id", async (req, res) => {
+ReviewRouter.get("/getOne/:id", async (req, res, next) => {
   try {
     const review = await Reviews.findById(req.params.id);
-    res.json(review);
+    res.status(200).json(review);
   } catch (error) {
-    console.error;
+    next(new CustomError('Unable to locate review by id', 400))
   }
 });
 
@@ -27,9 +28,9 @@ ReviewRouter.get("/getlimit/:limit", async (req, res) => {
     const reviews = await Reviews.find({ clinic: req.body.clinicId }).limit(
       req.params.limit
     );
-    res.json(reviews);
+    res.status(200).json(reviews);
   } catch (error) {
-    console.error;
+    next(new CustomError('Unable to get limited query', 400))
   }
 });
 
