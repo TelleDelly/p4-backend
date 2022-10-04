@@ -19,7 +19,7 @@ const secureRouter = express.Router()
 // REVIEW ROUTES //
 
 //Create Route
-secureRouter.post('/postreview', (req, res) => {
+secureRouter.post('/postreview', (req, res, next) => {
     const review = {
         title: req.body.title,
         body: req.body.body,
