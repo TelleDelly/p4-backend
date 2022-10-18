@@ -4,7 +4,7 @@ const DataController = express.Router()
 
 const svgData = require('../db/svgData.json')
 
-const CwwwustomError = require('../utils/CustomError')
+const CustomError = require('../utils/CustomError')
 
 DataController.get('/getSVGs', (req, res) => {
     try{
