@@ -6,7 +6,6 @@ const fs = require('fs')
 
 
 const URL = 'https://www.nytimes.com/interactive/2022/us/abortion-laws-roe-v-wade.html'
-const states = []
 const stateMap = new Map()
 
 
@@ -35,12 +34,10 @@ request(URL, (error, response, html) => {
         })
 
         // console.log(filteredData)
-        fs.writeFile('../db/svgData.json', JSON.stringify(filteredData), err =>{
+        fs.writeFile('./db/svgData.json', JSON.stringify(filteredData), err =>{
             if(err){
                 throw err
             }
-
-            console.log('done')
         })
     }
 })
