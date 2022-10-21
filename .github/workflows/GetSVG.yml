@@ -1,0 +1,16 @@
+# This is a basic workflow that is manually triggered
+
+name: Run SVG Script
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+
+jobs:
+  # This workflow contains a single job called "greet"
+  getData:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run Script
+      run: npm run get-svg
