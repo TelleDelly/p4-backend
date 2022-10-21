@@ -24,12 +24,21 @@ request(URL, (error, response, html) => {
         const whys = root.querySelectorAll('.g-table-rows-td-3')
 
         const filteredData = states.map((state, index) => {
+            let fill = '#ffffff'
+            let stateStatus = status[index].text.trim()
+            if(stateStatus === 'Banned') fill = '#870000'
+            if(stateStatus === 'Gestational limit') fill = '#D68671'
+            if(stateStatus === 'Ban blocked') fill = '#efdbcb'
+            if(stateStatus === 'Legal but limited') fill = '#b3d0c7'
+            if(stateStatus === 'Legal') fill = '6fa194'
+
             return {
                 state: state.text,
                 abbr: stateMap.get(state.text),
                 status: status[index].text.trim(),
                 legalUntil: legalUntil[index].text.trim(),
                 why: whys[index].text.trim(),
+                fill: fill,
             }
         })
 
