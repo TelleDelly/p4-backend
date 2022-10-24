@@ -9,7 +9,6 @@ on:
 jobs:
   # This workflow contains a single job called "greet"
   getData:
-    name: Get Data
     runs-on: ubuntu-latest
     
     strategy:
