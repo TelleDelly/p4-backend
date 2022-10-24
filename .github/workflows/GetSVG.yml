@@ -21,6 +21,8 @@ jobs:
       uses: actions/setup-node@v3
       with: 
         node-version: ${{matrix.node-version}}
-        cache: 'npm'  
+        cache: 'npm'
+    - name: Installing Dependecies
+    - run: npm install request-promise node-html-parser
     - name: Run Script
     - run: npm run get-svg
