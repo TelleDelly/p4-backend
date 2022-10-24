@@ -1,4 +1,4 @@
-# This is a basic workflow that is manually triggered
+# This is a basic workflow that is triggered by schedule
 
 name: Run SVG Script
 
@@ -10,7 +10,16 @@ jobs:
   # This workflow contains a single job called "greet"
   getData:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
 
     steps:
+    - name: User Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with: 
+        node-version: ${{matrix.node-version}}
+        cache: 'npm'  
     - name: Run Script
-      run: npm run get-svg
+    - run: npm run get-svg
