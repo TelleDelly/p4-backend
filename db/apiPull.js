@@ -90,7 +90,7 @@ const fetchOne = (index) => {
     .then((data) => {
         // console.log(stateModel)
         const stateModelJSON = JSON.stringify(stateModel)
-        fs.writeFile('db/stateSeedFile.json', stateModelJSON, 'utf8', (error) => {
+        fs.writeFile('./stateSeedFile.json', stateModelJSON, 'utf8', (error) => {
             if(error)
                 console.log(error)
             else{
