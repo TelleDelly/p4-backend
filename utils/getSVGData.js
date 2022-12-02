@@ -30,7 +30,7 @@ request(URL, (error, response, html) => {
             if(stateStatus === 'Gestational limit') fill = '#D68671'
             if(stateStatus === 'Ban blocked') fill = '#efdbcb'
             if(stateStatus === 'Legal but limited') fill = '#b3d0c7'
-            if(stateStatus === 'Legal') fill = '6fa194'
+            if(stateStatus === 'Legal') fill = '#6fa194'
 
             return {
                 state: state.text,
