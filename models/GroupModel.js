@@ -1,5 +1,5 @@
 const {Schema} = require('mongoose')
-const mongoose =require('../db/Connection')
+const mongoose = require('../db/Connection')
 
 const GroupSchema = new mongoose.Schema(
     {

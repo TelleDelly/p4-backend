@@ -13,4 +13,13 @@ GroupRouter.get('/getGroup/:id', async (req, res, next) => {
     }
 })
 
+GroupRouter.get('/getGroupsByState/:name', async (req, res, next) => {
+    try {
+        const groups = await Groups.find({'areaOfOperation.state.stateName': req.params.name})
+        res.status(200).json(groups)
+    } catch(err) {
+        next(new CustomError('Groups not found', 404))
+    }
+})
+
 module.exports = GroupRouter
