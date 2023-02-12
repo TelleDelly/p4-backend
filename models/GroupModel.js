@@ -8,52 +8,26 @@ const GroupSchema = new mongoose.Schema(
             required: true,
             maxlength: 180, 
         },
-        areaOfOperation: {
-            city: {
-                cityName: String,
-                cityRegion: String,
-            },
-            state: {
-                stateName: String,
-                stateRegion: String,
-            },
-            region: {
-                regionName: String,
-                cities: Array,
-                states: Array
-            }
-        },
-        resourceType: {
+        state: String,
+        city: String,
+        region: String,
+        resources: {
             type: Array,
             required: true
         },
         contactInfo: {
-            websiteURL: URL,
+            websiteURL: String,
             phone: String,
             email: String,
-            socialMedia: Array,
             pointOfContact: String,
         },
-        outreach:{
-            type: Array
-        },
-        connections: {
-            type: Array
-        },
-        services: {
-            type: Array
-        },
-        misc: {
-            type: Array
-        },
+        misc: String,
         about: {
             type: String,
-            required: true,
             maxlength: 800
         },
-        shortSummary: {
+        summary: {
             type: String,
-            required: true,
             maxlength: 1000
         }
     }

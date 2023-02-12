@@ -1,0 +1,20 @@
+[{
+    "name": "fsdfsdfs",
+    "state": "asdfasdf",
+    "city": "asdfasdfasd",
+    "region": "dasdfasd",
+    "resources": [
+        "asdfasd",
+        "sdfsdfsd",
+        "sadfasdfa"
+    ],
+    "contactInfo": {
+        "phone": "4146400985",
+        "email": "martinwilson450@gmail.com",
+        "pointOfContact": "aasdfasdf",
+        "website": "https://google.com"
+    },
+    "misc": "THis group is awesome",
+    "about": "asdfasdfa",
+    "summary": "asdfasdfas"
+}]
