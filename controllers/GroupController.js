@@ -9,6 +9,7 @@ const CustomError = require('../utils/CustomError')
 GroupRouter.get('/', async (req, res, next) => {
     const {search} = req.query
     let groups;
+    const limit = 5
     if(search) {
         groups = await Groups.aggregate([
             {
@@ -20,7 +21,7 @@ GroupRouter.get('/', async (req, res, next) => {
                 }
               }
             }, {
-              '$limit': 5
+              '$limit': limit
             }, {
               '$project': {
                 '_id': 1, 
@@ -30,13 +31,13 @@ GroupRouter.get('/', async (req, res, next) => {
           ]
         )
     } else {
-        groups = await Groups.find().sort({createdAt: 'desc'})
+        groups = []
     }
 
     return res.status(200).json({
         statusCode: 200,
         message: 'Fetched Posts',
-        data: { posts },
+        data: { groups },
     })
 })
 
