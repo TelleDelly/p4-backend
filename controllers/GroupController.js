@@ -6,6 +6,41 @@ const GroupRouter = express.Router()
 const Groups = require('../models/GroupModel')
 const CustomError = require('../utils/CustomError')
 
+GroupRouter.get('/', async (req, res, next) => {
+    const {search} = req.query
+    let groups;
+    const limit = 5
+    if(search) {
+        groups = await Groups.aggregate([
+            {
+              '$search': {
+                'index': 'groupByName', 
+                'autocomplete': {
+                  'query': search, 
+                  'path': 'name'
+                }
+              }
+            }, {
+              '$limit': limit
+            }, {
+              '$project': {
+                '_id': 1, 
+                'name': 1
+              }
+            }
+          ]
+        )
+    } else {
+        groups = []
+    }
+
+    return res.status(200).json({
+        statusCode: 200,
+        message: 'Fetched Posts',
+        data: { groups },
+    })
+})
+
 GroupRouter.get('/getAll', async (req, res) => {
     try{
         const response = await Groups.find({})
