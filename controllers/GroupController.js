@@ -9,7 +9,7 @@ const CustomError = require('../utils/CustomError')
 GroupRouter.get('/getAll', async (req, res) => {
     try{
         const response = await Groups.find({})
-        res.status(200).json('Group added')
+        res.status(200).json(response)
     } catch (err) {
         next(new CustomError('Unable to get groups', 404))
     }
@@ -38,11 +38,11 @@ GroupRouter.put('/:id/edit', async (req, res) => {
         const isSuccess = await Groups.findByIdAndUpdate(req.params.id, req.body, {new: true})
         res.send(isSuccess)
     } catch (err) {
-        next(new CustomError('Groups not updated', 404))
+        console.log(err)
     }
 })
 
-GroupRouter.post('/add', async (req,res) => {
+GroupRouter.post('/add', async (req,res, next) => {
     try{
         const isSuccess = await Groups.create(req.body)
         res.send(isSuccess)
