@@ -5,11 +5,11 @@ const GroupRouter = express.Router()
 
 const Groups = require('../models/GroupModel')
 const CustomError = require('../utils/CustomError')
+const logger = require('../utils/logger')
 
 GroupRouter.get('/', async (req, res, next) => {
     const {search} = req.query
     let groups;
-    const limit = 5
     if(search) {
         groups = await Groups.aggregate([
             {
@@ -21,11 +21,47 @@ GroupRouter.get('/', async (req, res, next) => {
                 }
               }
             }, {
-              '$limit': limit
+              '$limit': 5
             }, {
               '$project': {
                 '_id': 1, 
                 'name': 1
+              }
+            }
+          ]
+        )
+    } else {
+        groups = []
+    }
+
+    return res.status(200).json({
+        statusCode: 200,
+        message: 'Fetched Posts',
+        data: { groups },
+    })
+})
+
+GroupRouter.get('/searchGroups', async (req, res, next) => {
+    const {search} = req.query
+    let groups;
+    if(search) {
+        groups = await Groups.aggregate([
+            {
+              '$search': {
+                'index': 'groupByName', 
+                'autocomplete': {
+                  'query': search, 
+                  'path': 'name'
+                }
+              }
+            }, {
+              '$limit': 15
+            }, {
+              '$project': {
+                '_id': 1, 
+                'name': 1,
+                'summary': 1,
+                'resources': 1
               }
             }
           ]
