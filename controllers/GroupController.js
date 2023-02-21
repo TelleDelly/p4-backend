@@ -10,6 +10,7 @@ const logger = require('../utils/logger')
 GroupRouter.get('/', async (req, res, next) => {
     const {search} = req.query
     let groups;
+
     if(search) {
         groups = await Groups.aggregate([
             {
@@ -25,7 +26,9 @@ GroupRouter.get('/', async (req, res, next) => {
             }, {
               '$project': {
                 '_id': 1, 
-                'name': 1
+                'name': 1,
+                'summary': 1,
+                'resources': 1
               }
             }
           ]
@@ -55,7 +58,7 @@ GroupRouter.get('/searchGroups', async (req, res, next) => {
                 }
               }
             }, {
-              '$limit': 15
+              '$limit': 25
             }, {
               '$project': {
                 '_id': 1, 
@@ -72,7 +75,7 @@ GroupRouter.get('/searchGroups', async (req, res, next) => {
 
     return res.status(200).json({
         statusCode: 200,
-        message: 'Fetched Posts',
+        message: 'Fetched Groups',
         data: { groups },
     })
 })
@@ -80,7 +83,11 @@ GroupRouter.get('/searchGroups', async (req, res, next) => {
 GroupRouter.get('/getAll', async (req, res) => {
     try{
         const response = await Groups.find({})
-        res.status(200).json(response)
+        res.status(200).json({
+          statusCode: 200,
+          message: 'Fetched Groups',
+          data: {response}
+        })
     } catch (err) {
         next(new CustomError('Unable to get groups', 404))
     }
