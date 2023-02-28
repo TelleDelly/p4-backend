@@ -11,6 +11,9 @@ const GroupSchema = new mongoose.Schema(
         state: String,
         city: String,
         region: String,
+        access: Boolean,
+        policy: Boolean,
+        funds: Boolean,
         resources: {
             type: Array,
             required: true
