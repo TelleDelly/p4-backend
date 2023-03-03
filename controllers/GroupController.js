@@ -47,7 +47,9 @@ GroupRouter.get('/', async (req, res, next) => {
                 '_id': 1, 
                 'name': 1,
                 'summary': 1,
-                'resources': 1
+                'resources': 1,
+                'state': 1,
+                'city': 1
               }
             }
           ]
