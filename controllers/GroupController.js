@@ -8,21 +8,40 @@ const CustomError = require('../utils/CustomError')
 const logger = require('../utils/logger')
 
 GroupRouter.get('/', async (req, res, next) => {
-    const {search} = req.query
+    const {search, limit} = req.query
+    const limitNum = parseInt(limit)
     let groups;
 
     if(search) {
         groups = await Groups.aggregate([
             {
               '$search': {
-                'index': 'groupByName', 
-                'autocomplete': {
-                  'query': search, 
-                  'path': 'name'
+                'index': 'groupByName',
+                compound: {
+                  should: [
+                    {'autocomplete': {
+                      'query': search, 
+                      'path': "name"
+                    }},
+                    {'autocomplete': {
+                      'query': search,
+                      'path': "state"
+                    }},
+                    {'autocomplete' : {
+                      'query': search,
+                      'path': 'city'
+                    }},
+                    {'autocomplete': {
+                      'query': search,
+                      'path': 'region'
+                    }}
+                  ]
                 }
+                
+                
               }
             }, {
-              '$limit': 5
+              '$limit': limitNum
             }, {
               '$project': {
                 '_id': 1, 
@@ -39,9 +58,48 @@ GroupRouter.get('/', async (req, res, next) => {
 
     return res.status(200).json({
         statusCode: 200,
-        message: 'Fetched Posts',
+        message: 'Fetched Groups',
         data: { groups },
     })
+})
+
+GroupRouter.get('/access/getByType', async (req, res, next) => {
+  try {
+    const groups = await Groups.find({'access': true})
+    return res.status(200).json({
+      statusCode: 200,
+      message: 'Fetched Groups',
+      data: { groups },
+  })
+  } catch (err) {
+    next(new CustomError('Unable to get groups', 404))
+  }
+})
+
+GroupRouter.get('/funds/getByType', async (req, res, next) => {
+  try{
+    const groups = await Groups.find({'funds': true})
+    return res.status(200).json({
+      statusCode: 200,
+      message: 'Fetched Groups',
+      data: { groups },
+  })
+  } catch (error) {
+    next(new CustomError('Unable to get groups', 404))
+  }
+})
+
+GroupRouter.get('/policy/getByType', async (req, res, next) => {
+  try{
+    const groups = await Groups.find({'policy': true})
+    return res.status(200).json({
+      statusCode: 200,
+      message: 'Fetched Groups',
+      data: { groups }
+    })
+  } catch (err) {
+    next(new CustomError('Unable to get groups', 404))
+  }
 })
 
 GroupRouter.get('/searchGroups', async (req, res, next) => {

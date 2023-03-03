@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clear-all-logs": "rm logs/all.log",
     "clear-error-logs": "rm logs/error.log",
-    "get-svg": "node utils/getSVGData.js"
+    "get-svg": "node utils/getSVGData.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,8 @@
     "passport-local": "^1.0.0",
     "request-promise": "^4.2.6",
     "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
